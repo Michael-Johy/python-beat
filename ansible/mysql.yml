@@ -1,0 +1,11 @@
+
+---
+#安装与运行mysql服务
+- hosts: node1
+  remote_user: root
+  tasks:
+    - name: install mysql-server package
+      yum: name=mysql-server state=present
+    - name: starting mysqld service
+      service: name=mysql state=started
+
